@@ -33,7 +33,7 @@ function ProductInfo(props) {
           the original from '88. Signature details and materials celebrate the
           game-changing icon.'
         </p>
-        <a onClick={AddToCard} href="#">
+        <a onClick={(e) => AddToCard(name, e)} href="#">
           Add to Chart
         </a>
       </div>
@@ -41,7 +41,7 @@ function ProductInfo(props) {
   );
 }
 
-function AddToCard() {
-  console.log("Membeli product...");
+function AddToCard(e) {
+  console.log("Buy product " + e);
 }
 export default App;
