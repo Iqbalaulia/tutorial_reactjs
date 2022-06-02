@@ -31,7 +31,14 @@ function CheckDiscount(props) {
 
 function ProductInfo(props) {
   const { category, name, isDiscount } = props;
+  const benefits = [
+    "Waterproof",
+    "Anti kusut",
+    "Mudah dibersihkan",
+    "Anti debu",
+  ];
   const price = 750000;
+  const listBenefits = benefits.map((itemBenefit) => <li>{itemBenefit}</li>);
   return (
     <div>
       <div className="Deskripsi">
@@ -45,6 +52,7 @@ function ProductInfo(props) {
           the original from '88. Signature details and materials celebrate the
           game-changing icon.'
         </p>
+        <ul>{listBenefits}</ul>
         <a onClick={(e) => AddToCard(name, e)} href="#">
           Add to Chart
         </a>
