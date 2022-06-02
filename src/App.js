@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="Parentbox">
       <ProductImage />
-      <ProductInfo name="AJ Maximum" category="TAHUN BARU" />
+      <ProductInfo isDiscount="yes" name="AJ Maximum" category="TAHUN BARU" />
     </div>
   );
 }
@@ -18,8 +18,19 @@ function ProductImage() {
   );
 }
 
+function CheckDiscount(props) {
+  const { isDiscount } = props;
+  if (isDiscount == "yes") {
+    return <p>Diskon 50% off</p>;
+  } else if (isDiscount == "coming") {
+    return <p>Akan ada diskon...</p>;
+  } else {
+    return <p>Belum ada diskon</p>;
+  }
+}
+
 function ProductInfo(props) {
-  const { category, name } = props;
+  const { category, name, isDiscount } = props;
   const price = 750000;
   return (
     <div>
@@ -27,6 +38,7 @@ function ProductInfo(props) {
         <p className="Cate">{category}</p>
         <h1 className="Title"> {name}</h1>
         <p className="Price">IDR {price}</p>
+        <CheckDiscount isDiscount={isDiscount} />
         <p className="Info">
           One of the most recognizable shoes in the IQ collection, the Air
           Jordan 5 Maximus features lightweight, visible cushioning just like
