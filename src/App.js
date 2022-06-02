@@ -33,9 +33,15 @@ function ProductInfo(props) {
           the original from '88. Signature details and materials celebrate the
           game-changing icon.'
         </p>
+        <a onClick={AddToCard} href="#">
+          Add to Chart
+        </a>
       </div>
     </div>
   );
 }
 
+function AddToCard() {
+  console.log("Membeli product...");
+}
 export default App;
